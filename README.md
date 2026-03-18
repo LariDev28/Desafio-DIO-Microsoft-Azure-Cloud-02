@@ -15,6 +15,8 @@ VSCode
 
 HTML
 
+PowerShell
+
 🎯 Objetivos do Projeto
 
 Criar uma aplicação web de blog funcional
