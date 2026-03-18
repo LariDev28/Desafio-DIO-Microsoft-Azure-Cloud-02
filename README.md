@@ -13,7 +13,7 @@ Azure App Service
 
 VSCode
 
-Python
+HTML
 
 🎯 Objetivos do Projeto
 
