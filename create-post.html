@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Post</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 300px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        button {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-submit {
+            background-color: #27ae60;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #229954;
+        }
+
+        .btn-cancel {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background-color: #7f8c8d;
+        }
+
+        .form-info {
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .form-info p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>📝 Meu Blog</h1>
+            <a href="index.html">← Voltar</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">✏️ Criar Novo Post</h2>
+
+            <div class="form-info">
+                <p>📌 Preencha todos os campos abaixo para criar um novo post no seu blog.</p>
+            </div>
+
+            <form id="createPostForm">
+                <div class="form-group">
+                    <label for="postTitle">Título do Post *</label>
+                    <input 
+                        type="text" 
+                        id="postTitle" 
+                        name="title" 
+                        placeholder="Digite o título do seu post"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postAuthor">Autor *</label>
+                        <input 
+                            type="text" 
+                            id="postAuthor" 
+                            name="author" 
+                            placeholder="Seu nome"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postDate">Data de Publicação *</label>
+                        <input 
+                            type="date" 
+                            id="postDate" 
+                            name="date"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="postCategory">Categoria *</label>
+                    <select id="postCategory" name="category" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="blog">Blog</option>
+                        <option value="desenvolvimento">Desenvolvimento</option>
+                        <option value="web">Web</option>
+                        <option value="design">Design</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="postContent">Conteúdo do Post *</label>
+                    <textarea 
+                        id="postContent" 
+                        name="content" 
+                        placeholder="Escreva o conteúdo completo do seu post aqui..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postSummary">Resumo/Descrição (para a lista principal) *</label>
+                    <textarea 
+                        id="postSummary" 
+                        name="summary" 
+                        placeholder="Escreva um breve resumo do post (máx. 200 caracteres)"
+                        maxlength="200"
+                        rows="3"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="postTags">Tags (separadas por vírgula)</label>
+                    <input 
+                        type="text" 
+                        id="postTags" 
+                        name="tags" 
+                        placeholder="Ex: html, css, javascript"
+                    >
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-submit">📤 Publicar Post</button>
+                    <button type="reset" class="btn-cancel">🔄 Limpar Formulário</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('createPostForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                title: document.getElementById('postTitle').value,
+                author: document.getElementById('postAuthor').value,
+                date: document.getElementById('postDate').value,
+                category: document.getElementById('postCategory').value,
+                content: document.getElementById('postContent').value,
+                summary: document.getElementById('postSummary').value,
+                tags: document.getElementById('postTags').value
+            };
+
+            console.log('Novo post criado:', formData);
+            alert('✅ Post criado com sucesso!\n\nTítulo: ' + formData.title);
+            
+            // Redirecionar para a página inicial após 2 segundos
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000);
+        });
+
+        // Definir data inicial como hoje
+        document.getElementById('postDate').valueAsDate = new Date();
+    </script>
+</body>
+</html>

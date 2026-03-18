@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog - Início</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        nav h1 {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            padding: 0.5rem 1rem;
+            background-color: #3498db;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .post-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-header {
+            background-color: #3498db;
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .post-header h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-date {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background-color: #ecf0f1;
+            border-top: 1px solid #bdc3c7;
+        }
+
+        .read-more {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #2980b9;
+        }
+
+        .author {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .empty-state {
+            background-color: white;
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .empty-state p {
+            color: #7f8c8d;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>📝 Meu Blog</h1>
+            <a href="create-post.html">+ Novo Post</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Posts Recentes</h2>
+
+        <div class="posts-grid">
+            <div class="post-card">
+                <div class="post-header">
+                    <h2>Bem-vindo ao Meu Blog</h2>
+                    <span class="post-date">17 de Março de 2026</span>
+                </div>
+                <div class="post-content">
+                    <p>Este é o seu primeiro post de exemplo. Você pode criar novos posts clicando no botão "Novo Post" no topo da página.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="author">Por: Administrador</span>
+                    <a href="#" class="read-more">Ler mais →</a>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <h2>Como Usar Este Blog</h2>
+                    <span class="post-date">17 de Março de 2026</span>
+                </div>
+                <div class="post-content">
+                    <p>Aprenda como criar, editar e gerenciar seus posts de forma simples e intuitiva neste sistema de blog.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="author">Por: Administrador</span>
+                    <a href="#" class="read-more">Ler mais →</a>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-header">
+                    <h2>Recursos Disponíveis</h2>
+                    <span class="post-date">17 de Março de 2026</span>
+                </div>
+                <div class="post-content">
+                    <p>Descubra todos os recursos e funcionalidades disponíveis para melhorar sua experiência de blogging.</p>
+                </div>
+                <div class="post-footer">
+                    <span class="author">Por: Administrador</span>
+                    <a href="#" class="read-more">Ler mais →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Meu Blog. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
