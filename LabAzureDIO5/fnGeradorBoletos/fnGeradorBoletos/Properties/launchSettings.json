@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "fnGeradorBoletos": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7999 --cors \"*\""
-    }
-  }
-}
