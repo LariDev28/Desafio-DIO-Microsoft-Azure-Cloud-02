@@ -10,6 +10,8 @@ O objetivo é demonstrar, na prática, como aplicações web podem ser desenvolv
 
 Microsoft Azure
 
+Azure Container Apps
+
 Azure App Service 
 
 VSCode
@@ -40,13 +42,7 @@ Hospedagem em ambiente cloud
 
 📊 Resultados
 
-Com este projeto, foi possível:
-
-Aplicar conceitos de computação em nuvem na prática
-
-Realizar o deploy de uma aplicação web na Azure
-
-Compreender como funciona a hospedagem de aplicações em cloud
+Com este projeto, foi possível aplicar conceitos de computação em nuvem na prática, realizar o deploy de uma aplicação web na Azure e compreender como funciona a hospedagem de aplicações em cloud.
 
 Explorar recursos como escalabilidade e gerenciamento de serviços
 
